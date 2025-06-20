@@ -4,42 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thomas Boulogne - CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Thomas Boulogne</h1>
-    <p>Étudiant en Master Informatique | Développement Web & Logiciel</p>
+    <p>Étudiant en Master Informatique | Développement Full Stack</p>
     <p><a href="mailto:tb62134@gmail.com">tb62134@gmail.com</a> | Lens, France</p>
   </header>
 
-  <section>
-    <h2>À propos de moi</h2>
-    <p>Actuellement en deuxième année de Master Informatique à la Faculté Jean Perrin de Lens, je suis passionné par le développement d'applications web, les architectures distribuées et les technologies modernes.</p>
-  </section>
+  <div class="section-container">
 
-  <section>
-    <h2>Compétences</h2>
-    <ul>
-      <li>Langages : Java, HTML/CSS, JavaScript, SQL</li>
-      <li>Frameworks : Quarkus, Vue.js, Struts 2</li>
-      <li>Outils : Git, Gradle, Docker, Flyway</li>
-    </ul>
-  </section>
+    <section>
+      <h2>À propos de moi</h2>
+      <p>Actuellement en deuxième année de Master Informatique à la Faculté Jean Perrin de Lens, je suis passionné par le développement d'applications web, les architectures distribuées et les technologies modernes.</p>
+    </section>
+  
+    <section>
+      <h2>Compétences</h2>
+      <ul>
+        <li>Langages : Java, HTML/CSS, JavaScript, SQL</li>
+        <li>Frameworks : Quarkus, Vue.js, Struts 2</li>
+        <li>Outils : Git, Gradle, Docker, Flyway</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Expérience Professionelle</h2>
+      <p><strong>Alternant Développeur </strong> – Worldline, Septembre 2024 - Septembre 2025</p>
+      <p><strong>Stage Développeur</strong> – Worldline, Avril 2024 - Septembre 2024</p>
+    </section>
+  
+    <section>
+      <h2>Formation</h2>
+      <p><strong>Master Informatique</strong> – Faculté Jean Perrin, Lens (2023 - 2025)</p>
+      <p><strong>Licence Informatique</strong> – Université d’Artois (2020 - 2023)</p>
+    </section>
+  
+    <section>
+      <h2>Projets Universitaires</h2>
+      <ul>
+        <li>
+          <p><strong>Poc Stripe</strong> – Backend Java + Front Vue.js, PoC ayant pour objectif de présenter le framework Stripe.</p>
+          <p class="project-description">Projet réalisé seul, le but étant de démontrer l'intégration simple d'un système de paiement dans une boutique en ligne</p></li>
+        </li>
+        <li>
+          <p><strong>Application DPE</strong> – Backend Java + Front Struts 2, intégration de données ADEME.</p>
+          <p class="project-description">Projet réalisé en binome, travail partagé de manière égale</p></li>
+        </li>
+        <li>
+          <p><strong>Application mobile "Gestion de frigo"</strong> – Android Java, navigation Jetpack, fragments personnalisés.</p>
+          <p class="project-description">Projet réalisé dans une équipe de 4 personnes, j'ai réalisé toute la partie Mobile</p></li>
+      </ul>
+    </section>
+  </div>
 
-  <section>
-    <h2>Formation</h2>
-    <p><strong>Master Informatique</strong> – Faculté Jean Perrin, Lens (2023 - 2025)</p>
-    <p><strong>Licence Informatique</strong> – Université d’Artois (2020 - 2023)</p>
-  </section>
+  <div class="portfolio-container">
+    <div class="title">
+      <img src="https://www.nicepng.com/png/full/321-3211558_unreal-logo-png.png">
+      <h2>Unreal Engine</h2>
+    </div>
+  <div class="carousel">
+    <input type="radio" name="video" id="video1" checked>
+    <input type="radio" name="video" id="video2">
+    <input type="radio" name="video" id="video3">
 
-  <section>
-    <h2>Projets</h2>
-    <ul>
-      <li><strong>Application DPE</strong> – Backend Java + Front Vue.js, intégration de données ADEME, cache et authentification JWT.</li>
-      <li><strong>Application mobile "Gestion de frigo"</strong> – Android Java, navigation Jetpack, fragments personnalisés.</li>
-    </ul>
-  </section>
+    <div class="videos">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/HKiuLy5v3O8" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/CEnfLPiGrVY" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/WAzbKpGAFnI" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="nav">
+      <label for="video1"></label>
+      <label for="video2"></label>
+      <label for="video3"></label>
+    </div>
+  </div>
+</div>
+
+
+  </div>
 
   <footer>
     <p>&copy; 2025 Thomas Boulogne</p>
