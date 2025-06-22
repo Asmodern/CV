@@ -190,7 +190,7 @@ footer {
 .nav label {
   width: 12px;
   height: 12px;
-  background-color: var(--color-background-lightbackground);
+  background-color: var(--color-background-light);
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
