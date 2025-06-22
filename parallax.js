@@ -1,6 +1,6 @@
 
-const colors = ['#8e44ad', '#3498db'];
-const numLights = 10;
+const colors = ['#8e44ad', '#3498db','#9f55be', '#45a9ec', '#56bafd'];
+const numLights = 50;
 
 const container = document.querySelector('.parallax-background');
 
@@ -10,10 +10,14 @@ for (let i = 0; i < numLights; i++) {
 const light = document.createElement('div');
 light.classList.add('light');
 light.style.backgroundColor = colors[i % colors.length];
-light.dataset.speed = (0.2 + Math.random() * 1).toFixed(2);
+light.dataset.speed = (Math.random() * .3).toFixed(2);
 light.style.top = `${Math.random() * 100}%`;
+light.style.filter = `blur(${20 + Math.random() * 400}px)`;
 
-let left = (Math.random()-.5) * 20;
+const width = `${20 + Math.random() * 200}px`;
+light.style.width = width;
+light.style.height = width;
+let left = (Math.random()-.5) * 40;
 if (left >0){
     light.style.left = `${left}%`;
 
