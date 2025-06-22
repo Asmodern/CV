@@ -1,55 +1,10 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-html{
-  height: 100%;
-  position: relative;
-}
+:root{
+  --color-background: #0e0e0e;
+  --color-background-light: whitesmoke;
+  --text-color-light:white;
+  --text-color-dark:gray;
 
-header {
-  background-color: #0077cc;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
 
-header h1 {
-  margin: 0;
-}
-
-a {
-  color: #eee;
-  text-decoration: underline;
-}
-
-section {
-  padding: 1.5rem 2rem;
-  background: white;
-  margin: 1rem auto;
-  max-width: 800px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-section h2 {
-  color: #0077cc;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9em;
-  background: #eee;
-  margin-top: 2rem;
 }
 
 .portfolio-container{
@@ -63,6 +18,98 @@ footer {
 .portfolio-container h2 {
   color: White;
 }
+
+.portfolio-container {
+  position: relative;
+  background-color: var(--color-background);
+  color: white;
+  padding: 2rem;
+}
+header::after,
+header::before,
+.portfolio-container::before,
+.portfolio-container::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+header::before,
+.portfolio-container::before {
+  background: #8e44ad; /* Violet */
+  top: -100px;
+  left: -100px;
+}
+
+header::after,
+.portfolio-container::after {
+  background: #3498db; /* Bleu */
+  bottom: 100px;
+  right: -100px;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background:var(--color-background);
+  color: #333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+html{
+  height: 100%;
+  position: relative;
+}
+
+header {
+  background-color: var(--color-background);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+}
+
+a {
+  color: #eee;
+  text-decoration: underline;
+}
+
+section {
+  padding: 1.5rem 2rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  background: #222;
+  box-shadow: 0 0 10px #8e44adaa;
+}
+
+.section-container section h2 {
+  color: var(--color-background);
+}
+.section-container{
+  display: block;
+  color: unset;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9em;
+  background: #eee;
+  margin-top: 2rem;
+}
+
 .title{
   display: flex;
   justify-content: space-between;
@@ -80,7 +127,6 @@ footer {
 
 
 
-
 .video-carousel {
   text-align: center;
   padding: 2rem;
@@ -91,6 +137,8 @@ footer {
   max-width: 800px;
   border-radius: 10px;
   overflow: hidden;
+  height: fit-content;
+  z-index: 2;
 }
 
 .carousel input[type="radio"] {
@@ -142,7 +190,7 @@ footer {
 .nav label {
   width: 12px;
   height: 12px;
-  background-color: #bbb;
+  background-color: var(--color-background-lightbackground);
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -152,4 +200,116 @@ footer {
 #video2:checked ~ .nav label[for="video2"],
 #video3:checked ~ .nav label[for="video3"] {
   background-color: #0077cc;
+}
+
+.description{
+  max-width: 700px;
+  text-align: center;
+}
+
+
+
+.skill-wheel {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0e0e0e 60%, transparent 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px;
+  font-size: 2rem;
+  color: #8e44ad;
+  /* Positionnement circulaire */
+  transform: rotate(calc(60deg * var(--i))) translate(120px) rotate(calc(-60deg * var(--i)));
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill:hover {
+  color: #3498db;
+  transform: rotate(calc(60deg * var(--i))) translate(130px) rotate(calc(-60deg * var(--i))) scale(1.2);
+}
+.skill-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem auto;
+  max-width: 900px;
+}
+
+.skill-wheel {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0e0e0e 60%, transparent 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.skill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px;
+  font-size: 2.5rem;
+  color: #8e44ad;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.7s ease;
+  /* on enlève la rotation statique pour gérer avec JS */
+}
+
+.skill:hover {
+  color: #3498db;
+  transform: scale(1.3);
+}
+
+.skill-description {
+  color: white;
+  width: 400px;
+  font-size: 1.1rem;
+  min-height: 120px;
+  background: #222;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #8e44adaa;
+}
+
+
+
+.parallax-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.light {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  mix-blend-mode: screen;
 }

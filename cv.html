@@ -6,15 +6,36 @@
   <title>Thomas Boulogne - CV</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="skills.js" defer></script>
+  <script src="parallax.js" defer></script>
 </head>
-<body>
+<body >
+  
+<!-- <div class="parallax-background"></div> -->
   <header>
     <h1>Thomas Boulogne</h1>
     <p>Étudiant en Master Informatique | Développement Full Stack</p>
     <p><a href="mailto:tb62134@gmail.com">tb62134@gmail.com</a> | Lens, France</p>
   </header>
 
-  <div class="section-container">
+  <div class="portfolio-container">
+
+  <div class="skill-container">
+  <div class="skill-wheel" id="skillWheel">
+    <div class="skill" data-index="0" data-text="Java - langage de programmation orienté objet"><i class="fa-brands fa-java"></i></div>
+    <div class="skill" data-index="1" data-text="JavaScript - langage de script pour le web"><i class="fa-brands fa-js"></i></div>
+    <div class="skill" data-index="2" data-text="SQL - gestion et interrogation des bases de données"><i class="fa-solid fa-database"></i></div>
+    <div class="skill" data-index="3" data-text="Vue.js - framework JavaScript pour interfaces réactives"><i class="fa-brands fa-vuejs"></i></div>
+    <div class="skill" data-index="4" data-text="HTML/CSS - structuration et mise en forme de pages web"><i class="fa-solid fa-code"></i></div>
+    <div class="skill" data-index="5" data-text="Git - gestion de versions et collaboration"><i class="fa-brands fa-git-alt"></i></div>
+  </div>
+
+  <div class="skill-description" id="skillDescription">
+    Clique sur un skill pour voir la description ici.
+  </div>
+</div>
+  </div>
+  <div class="section-container portfolio-container">
 
     <section>
       <h2>À propos de moi</h2>
@@ -62,9 +83,15 @@
 
   <div class="portfolio-container">
     <div class="title">
-      <img src="https://www.nicepng.com/png/full/321-3211558_unreal-logo-png.png">
+      <img src="https://cms-assets.unrealengine.com/AVzjeqAbLRKi3W5jq0CAvz/cmb81xhrq3wmn07o5xiqxc9fk">
       <h2>Unreal Engine</h2>
     </div>
+    <div class="description">
+
+      <p>Je crée des effets visuels à l’aide du système <strong>Niagara</strong> dans <strong>Unreal Engine 4.27</strong>, principalement comme passe-temps. Il s'agit d'effets variés (explosions, énergie, etc.) que j'ai entièrement conçus moi-même, et que je propose à la vente.</p>
+      <p>Cette activité me permet de développer ma créativité ainsi que mes compétences techniques en graphisme temps réel, bien que je ne dispose pas de formation formelle dans ce domaine.</p>
+    </div>
+
   <div class="carousel">
     <input type="radio" name="video" id="video1" checked>
     <input type="radio" name="video" id="video2">
@@ -72,10 +99,10 @@
 
     <div class="videos">
       <div class="video">
-        <iframe src="https://www.youtube.com/embed/HKiuLy5v3O8" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/CEnfLPiGrVY" allowfullscreen></iframe>
       </div>
       <div class="video">
-        <iframe src="https://www.youtube.com/embed/CEnfLPiGrVY" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/HKiuLy5v3O8" allowfullscreen></iframe>
       </div>
       <div class="video">
         <iframe src="https://www.youtube.com/embed/WAzbKpGAFnI" allowfullscreen></iframe>
