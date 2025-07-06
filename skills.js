@@ -24,6 +24,7 @@ fetch('./skills.json')
 .then(response => response.json())
 .then(skills => {
   console.log(skills);
+  console.log("v2");
   skillWheel.innerHTML = ''; // vide le contenu actuel
 
   skills.forEach(skill => {
