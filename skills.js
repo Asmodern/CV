@@ -44,24 +44,26 @@ fetch('./skills.json')
       div.appendChild(icon);
       skillWheel.appendChild(div);
     });
-    skills = document.querySelectorAll('.skill');
-    totalSkills = jsonSkills.length;
-    positionSkills(currentOffset);
-    skills.forEach((skill, i) => {
-      skill.addEventListener('click', () => {
-        // On calcule l’offset pour que ce skill soit en position 0 (droite)
-        currentOffset = totalSkills - i;
-        positionSkills(currentOffset);
+  skills = document.querySelectorAll('.skill');
+  totalSkills = jsonSkills.length;
+  positionSkills(currentOffset);
+  skills.forEach((skill, i) => {
+    console.log("skill" ,skill, "index" , i)
+    skill.addEventListener('click', () => {
+      // On calcule l’offset pour que ce skill soit en position 0 (droite)
+      currentOffset = totalSkills - i;
+      positionSkills(currentOffset);
+      console.log("currentOffset" , currentOffset)
 
-        // Afficher la description
-        const text = skill.getAttribute('data-text') || 'Pas de description disponible.';
-        const color = skill.getAttribute('data-color') || '#8e44ad';
-        typeWriter(skillDescription, text, 40);
+      // Afficher la description
+      const text = skill.getAttribute('data-text') || 'Pas de description disponible.';
+      const color = skill.getAttribute('data-color') || '#8e44ad';
+      typeWriter(skillDescription, text, 40);
 
-        // Optionnel : effet visuel sur le skill sélectionné
-        skills.forEach(s => s.style.color = '#8e44ad');
-        skill.style.color = color;
-      });
+      // Optionnel : effet visuel sur le skill sélectionné
+      skills.forEach(s => s.style.color = '#8e44ad');
+      skill.style.color = color;
+    });
     });
   })
   .catch(err => console.error('Erreur chargement JSON:', err));
