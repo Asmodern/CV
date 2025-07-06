@@ -245,6 +245,7 @@ footer {
   justify-content: center;
   align-items: center;
   user-select: none;
+  z-index: 3;
 }
 
 .skill {
