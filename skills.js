@@ -2,8 +2,12 @@ let skills = document.querySelectorAll('.skill');
 const skillWheel = document.getElementById('skillWheel');
 const skillDescription = document.getElementById('skillDescription');
 let totalSkills = skills.length;
+let currentOffset = 0; // combien on a tourné la roue
 
 function positionSkills(offset) {
+  console.log("totalSkills")
+  console.log(totalSkills)
+  totalSkills = skills.length;
   const angleStep = 360 / totalSkills;
 
   skills.forEach((skill, i) => {
@@ -22,12 +26,13 @@ function positionSkills(offset) {
 
 fetch('./skills.json')
 .then(response => response.json())
-.then(skills => {
-  console.log(skills);
+.then(jsonSkills => {
+  console.log(jsonSkills);
+  skills = jsonSkills;
   console.log("v2");
   skillWheel.innerHTML = ''; // vide le contenu actuel
 
-  skills.forEach(skill => {
+  jsonSkills.forEach(skill => {
     const div = document.createElement('div');
     div.classList.add('skill');
     div.dataset.index = skill.index;
@@ -40,12 +45,27 @@ fetch('./skills.json')
       div.appendChild(icon);
       skillWheel.appendChild(div);
     });
-    totalSkills = skills.length;
+    totalSkills = jsonSkills.length;
     positionSkills(currentOffset);
+    jsonSkills.forEach((skill, i) => {
+      skill.addEventListener('click', () => {
+        // On calcule l’offset pour que ce skill soit en position 0 (droite)
+        currentOffset = totalSkills - i;
+        positionSkills(currentOffset);
+
+        // Afficher la description
+        const text = skill.getAttribute('data-text') || 'Pas de description disponible.';
+        const color = skill.getAttribute('data-color') || '#8e44ad';
+        typeWriter(skillDescription, text, 40);
+
+        // Optionnel : effet visuel sur le skill sélectionné
+        jsonSkills.forEach(s => s.style.color = '#8e44ad');
+        skill.style.color = color;
+      });
+    });
   })
   .catch(err => console.error('Erreur chargement JSON:', err));
 
-let currentOffset = 0; // combien on a tourné la roue
 
 let typingTimeout; // variable globale pour stocker le timeout en cours
 
@@ -74,21 +94,6 @@ function typeWriter(element, text, delay = 50) {
 
 
 // Au clic, faire tourner la roue pour que l'élément cliqué soit à la position "droite" (0°)
-skills.forEach((skill, i) => {
-  skill.addEventListener('click', () => {
-    // On calcule l’offset pour que ce skill soit en position 0 (droite)
-    currentOffset = totalSkills - i;
-    positionSkills(currentOffset);
 
-    // Afficher la description
-    const text = skill.getAttribute('data-text') || 'Pas de description disponible.';
-    const color = skill.getAttribute('data-color') || '#8e44ad';
-    typeWriter(skillDescription, text, 40);
-
-    // Optionnel : effet visuel sur le skill sélectionné
-    skills.forEach(s => s.style.color = '#8e44ad');
-    skill.style.color = color;
-  });
-});
 
 // Initialisation : on positionne les skills sans offset
