@@ -28,7 +28,6 @@ fetch('./skills.json')
 .then(response => response.json())
 .then(jsonSkills => {
   console.log(jsonSkills);
-  skills = jsonSkills;
   console.log("v2");
   skillWheel.innerHTML = ''; // vide le contenu actuel
 
@@ -45,6 +44,7 @@ fetch('./skills.json')
       div.appendChild(icon);
       skillWheel.appendChild(div);
     });
+    skills = document.querySelectorAll('.skill');
     totalSkills = jsonSkills.length;
     positionSkills(currentOffset);
     jsonSkills.forEach((skill, i) => {
