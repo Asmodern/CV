@@ -47,7 +47,7 @@ fetch('./skills.json')
     skills = document.querySelectorAll('.skill');
     totalSkills = jsonSkills.length;
     positionSkills(currentOffset);
-    jsonSkills.forEach((skill, i) => {
+    skills.forEach((skill, i) => {
       skill.addEventListener('click', () => {
         // On calcule l’offset pour que ce skill soit en position 0 (droite)
         currentOffset = totalSkills - i;
@@ -59,7 +59,7 @@ fetch('./skills.json')
         typeWriter(skillDescription, text, 40);
 
         // Optionnel : effet visuel sur le skill sélectionné
-        jsonSkills.forEach(s => s.style.color = '#8e44ad');
+        skills.forEach(s => s.style.color = '#8e44ad');
         skill.style.color = color;
       });
     });
