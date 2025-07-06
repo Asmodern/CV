@@ -1,0 +1,38 @@
+[
+  {
+    "index": 0,
+    "color": "#007396",
+    "text": "Java - langage de programmation orienté objet",
+    "iconClass": "fa-brands fa-java"
+  },
+  {
+    "index": 1,
+    "color": "#f7df1e",
+    "text": "JavaScript - langage de script pour le web",
+    "iconClass": "fa-brands fa-js"
+  },
+  {
+    "index": 2,
+    "color": "#e38c00",
+    "text": "SQL - gestion et interrogation des bases de données",
+    "iconClass": "fa-solid fa-database"
+  },
+  {
+    "index": 3,
+    "color": "#42b883",
+    "text": "Vue.js - framework JavaScript pour interfaces réactives",
+    "iconClass": "fa-brands fa-vuejs"
+  },
+  {
+    "index": 4,
+    "color": "#e34c26",
+    "text": "HTML/CSS - structuration et mise en forme de pages web",
+    "iconClass": "fa-solid fa-code"
+  },
+  {
+    "index": 5,
+    "color": "#f05033",
+    "text": "Git - gestion de versions et collaboration",
+    "iconClass": "fa-brands fa-git-alt"
+  }
+]

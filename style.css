@@ -7,6 +7,20 @@
 
 }
 
+.entreprise-list img{
+
+  height: 80px;
+}
+
+.entreprise-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  min-width: 400px;
+}
+
+
 .portfolio-container{
   padding: 2rem;
   display: flex;
